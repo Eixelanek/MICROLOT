@@ -1,0 +1,258 @@
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0A0A0A;
+    color: white;
+    z-index: 1000;
+}
+
+.cart-header {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+}
+
+.cart-back-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1.5rem;
+}
+
+.cart-title {
+    font-family: 'Calive Regular', serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    width: 100%;
+    text-align: center;
+}
+
+.cart-columns {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.cart-column-header {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.875rem;
+}
+
+.cart-column-header:nth-child(2) {
+    text-align: right;
+}
+
+.cart-column-header:nth-child(3) {
+    text-align: center;
+}
+
+.cart-column-header.right {
+    text-align: right;
+}
+
+.cart-items {
+    padding: 0 1.5rem;
+    max-height: calc(100vh - 250px);
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.cart-product {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart-product-image {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+}
+
+.cart-product-name {
+    font-family: 'Calive Regular', serif;
+}
+
+.cart-price {
+    text-align: right;
+}
+
+.cart-quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cart-quantity-control {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255,255,255,0.1);
+    padding: 0.25rem 0.5rem;
+    position: relative;
+}
+
+.cart-quantity-value {
+    padding: 0 0.5rem;
+}
+
+.cart-quantity-dropdown {
+    background: none;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+    color: white;
+}
+
+.cart-quantity-dropdown svg {
+    fill: white;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.cart-quantity-dropdown:hover svg {
+    opacity: 1;
+}
+
+.quantity-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.1);
+    z-index: 10;
+}
+
+.quantity-option {
+    width: 100%;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.quantity-option:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.cart-item-total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart-remove-button {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.2s;
+}
+
+.cart-remove-button:hover {
+    color: white;
+}
+
+.cart-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0A0A0A;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    width: 250px;
+}
+
+.cart-total-amount {
+    font-size: 1.25rem;
+    text-align: right;
+}
+
+.cart-checkout-button {
+    width: 250px;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0.75rem;
+    font-family: 'Calive Regular', serif;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+.cart-checkout-button:hover {
+    background-color: #f0f0f0;
+}
+
+.checkout-alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    width: 90%;
+    max-width: 400px;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    animation: slideDown 0.3s ease-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    color: white;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+.cart-empty-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Calive Regular', serif;
+    padding: 2rem;
+}

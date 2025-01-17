@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Calive Regular';
+    src: url('./fonts/Calive-Regular.otf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'TT Interphases Pro Mono Trial Regular';
+    src: url('./fonts/TT Interphases Pro Mono Trial Regular.ttf') format('truetype');
+  }
